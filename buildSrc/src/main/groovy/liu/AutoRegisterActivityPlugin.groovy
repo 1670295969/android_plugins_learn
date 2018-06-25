@@ -1,11 +1,12 @@
 package liu
 
 import liu.ext.ActivityRegisterExtension
+import liu.register.ActivityRegisterService
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 
 
-class AutoRegisterActivity implements Plugin<Project> {
+class AutoRegisterActivityPlugin implements Plugin<Project> {
 
 
     public static final String DISPATCHER_EXTENSION_NAME = "activityRegister"

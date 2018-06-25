@@ -1,4 +1,4 @@
-package liu
+package liu.register
 
 import com.android.build.gradle.AppExtension
 import groovy.xml.MarkupBuilder

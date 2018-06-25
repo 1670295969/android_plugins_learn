@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name="liu.com.autoregisteravtivity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,6 +17,12 @@
             </intent-filter>
         </activity>
 
+
+  <activity android:name='liu.com.autoregisteravtivity.AutoRegister1Activity' android:screenOrientation='portrait' />
+  <activity android:name='liu.com.autoregisteravtivity.AutoRegister2Activity' android:screenOrientation='portrait' />
+  <activity android:name='liu.com.autoregisteravtivity.AutoRegister4Activity' android:screenOrientation='portrait' />
+
+  <activity android:name='liu.com.autoregisteravtivity.AptActivity' android:screenOrientation='portrait' />
 </application>
 
 </manifest>

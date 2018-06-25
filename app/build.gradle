@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
-apply plugin: liu.AutoRegisterActivity
+apply plugin: liu.AutoRegisterActivityPlugin
+apply plugin: liu.AspectJPlugin
 
 apply plugin: 'kotlin-android'
 
@@ -11,6 +12,7 @@ apply plugin: 'kotlin-android-extensions'
 //    screenOrientation "portrait"
 //    theme "@style/AppTheme_NoActionbar"
 //}
+
 
 android {
     compileSdkVersion 27
@@ -29,6 +31,11 @@ android {
 //        theme "@style/AppTheme_NoActionbar"
     }
 
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+
 
     buildTypes {
         release {
@@ -39,10 +46,6 @@ android {
 
 
 }
-
-
-
-
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
