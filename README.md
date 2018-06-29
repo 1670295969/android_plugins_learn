@@ -1,4 +1,4 @@
-# autoregisteractivity2manifest
+# android_plugins_learn
 # 练习gradle插件编写 
 # 主要功能是
 1. 自动配置Activity到AndroidManifest.xml 中, 这样就不会因忘记配置而造成崩溃的问题
