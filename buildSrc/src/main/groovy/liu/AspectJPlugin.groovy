@@ -1,8 +1,8 @@
 package liu
 
+import com.android.builder.model.AndroidProject
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import java.nio.file.Files
 
 import org.aspectj.bridge.IMessage
 import org.aspectj.bridge.MessageHandler
@@ -32,7 +32,7 @@ class AspectJPlugin implements Plugin<Project> {
                     String[] args = ["-showWeaveInfo",
                                      "-1.8",
                                      "-inpath", javaCompile.destinationDir.toString(),
-                                     "-aspectpath", javaCompile.classpath.asPath,
+                                     "-aspectpath",javaCompile.destinationDir.toString(),
                                      "-d", javaCompile.destinationDir.toString(),
                                      "-classpath", javaCompile.classpath.asPath,
                                      "-bootclasspath", project.android.bootClasspath.join(File.pathSeparator)]
@@ -59,11 +59,7 @@ class AspectJPlugin implements Plugin<Project> {
                     }
                 }
 
-                project.afterEvaluate{
-                    project.tasks.each {
-                        System.out.println("$it")
-                    }
-                }
+
 
 
         }

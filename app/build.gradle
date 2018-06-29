@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
-apply plugin: liu.AutoRegisterActivityPlugin
+//apply plugin: liu.AutoRegisterActivityPlugin
 apply plugin: liu.AspectJPlugin
+apply plugin: liu.TransformLearnPlugin
 
 apply plugin: 'kotlin-android'
 
@@ -13,6 +14,7 @@ apply plugin: 'kotlin-android-extensions'
 //    theme "@style/AppTheme_NoActionbar"
 //}
 
+//android.applicationVariants
 
 android {
     compileSdkVersion 27
@@ -23,13 +25,14 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
 
-    activityRegister {
-        manifestFilePath "app"
-        screenOrientation "portrait"
-//        theme "@style/AppTheme_NoActionbar"
-    }
+//    activityRegister {
+//        manifestFilePath "app"
+//        screenOrientation "portrait"
+////        theme "@style/AppTheme_NoActionbar"
+//    }
 
     compileOptions {
         sourceCompatibility 1.8
@@ -53,6 +56,7 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     testImplementation 'junit:junit:4.12'
+    implementation 'com.android.support:multidex:1.0.3'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }

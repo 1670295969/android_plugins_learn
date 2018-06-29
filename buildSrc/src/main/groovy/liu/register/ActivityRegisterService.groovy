@@ -81,13 +81,10 @@ class ActivityRegisterService {
     private void handleManifestFile(File file) {
         def xml = new XmlSlurper().parse(file)
         HashSet<String> activitySet = new HashSet<String>()
-        System.out.println("handleManifestFile-->" + file.absolutePath)
         String packageName = (xml.@"package")
 
-        System.out.println("packageName-->" + packageName)
         xml.application.activity.each {
             String activityName = it.@"android:name"
-            System.out.println("activityName-->" + activityName)
             if (activityName.startsWith(".")) {
 
                 activityName = packageName.toString() + activityName.toString()
@@ -96,7 +93,6 @@ class ActivityRegisterService {
 
             activitySet.add(activityName)
         }
-        System.out.println("activitySet-->" + activitySet)
 
 
         def writer = new StringWriter()
@@ -125,7 +121,6 @@ class ActivityRegisterService {
                 .replace("</application>", "")
                 .replace("<application />", "")
 
-        System.out.println(">>>" + activityManifest)
         String newManifestContent = file.getText("UTF-8")
         int index = newManifestContent.lastIndexOf("</application>")
         newManifestContent = newManifestContent.substring(0, index) + activityManifest + newManifestContent.substring(index)
